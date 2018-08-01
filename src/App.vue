@@ -1,21 +1,28 @@
 <template>
   <div class="container">
       <div class="row">
-          <counter class="col-6"></counter>
-          <check-counter class="col-3"></check-counter>
+          <cart class="col-4"></cart>
+          <product class="col-8"></product>
       </div>
   </div>
 </template>
 
 <script>
-import Counter from './components/Counter'
-import CheckCounter from './components/CheckCounter'
+import axios from 'axios'
+import Cart from './components/Cart'
+import Product from './components/Product'
 
 export default {
   name: 'app',
   components: {
-    Counter,
-    CheckCounter
+    Cart,
+    Product
+  },
+  mounted() {
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(response => {
+        this.$store.dispatch('products/fetchProducts',response.data)
+        // eslint-disable-next-line
+    }).catch(error => {console.log(error)})
   }
 }
 </script>
