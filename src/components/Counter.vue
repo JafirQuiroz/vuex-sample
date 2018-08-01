@@ -43,7 +43,7 @@
             changeName() {
                 let newName = 'New Name'
                 //We can pass aditional data as second parameter
-                this.$store.commit('changeName',newName)
+                this.$store.dispatch('changeName',newName)
             }
         }
     }
