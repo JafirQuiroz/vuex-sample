@@ -1,6 +1,13 @@
 <template>
     <div>
-        <h3>{{checkCounter}}</h3>
+        <div class="card">
+            <div class="card-header">
+                checkCounter
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{checkCounter}}</h5>
+            </div>
+        </div>
     </div>
 </template>
 
