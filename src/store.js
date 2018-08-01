@@ -5,11 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    counter: 10,
+    counter: 0,
     name: 'This is a name'
   },
   mutations: {
-
+    increment(state) {
+        state.counter++
+    },
+    changeName(state, payload) {
+        state.name = payload
+    }
   },
   actions: {
 
